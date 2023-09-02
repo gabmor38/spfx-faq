@@ -39,6 +39,8 @@ export default class FaqWebPart extends BaseClientSideWebPart<IFaqWebPartProps> 
   protected onInit(): Promise<void> {
     return this._getEnvironmentMessage().then(message => {
       this._environmentMessage = message;
+
+      // getSP(this.context);
     });
   }
 
