@@ -12,6 +12,7 @@ import * as strings from 'FaqWebPartStrings';
 import Faq from './components/Faq';
 import { IFaqProps } from './components/IFaqProps';
 
+
 export interface IFaqWebPartProps {
   description: string;
 }
@@ -29,7 +30,8 @@ export default class FaqWebPart extends BaseClientSideWebPart<IFaqWebPartProps> 
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
+        userDisplayName: this.context.pageContext.user.displayName,
+        context: this.context
       }
     );
 
