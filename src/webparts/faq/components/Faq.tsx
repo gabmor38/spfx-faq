@@ -9,6 +9,14 @@ import { SPFI } from '@pnp/sp';
 import '@pnp/sp/items';
 import "@pnp/sp/items/get-all";
 import { useEffect, useState } from 'react';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+
 
 export interface IFAQList {
  questionEN: string,
@@ -58,7 +66,20 @@ const Faq = (props: IFaqProps) => {
   console.log("items", faqItems)
 
   return (
-    <h1>hello</h1>
+    <>
+    <Accordion >
+      <AccordionItem>
+        <AccordionItemHeading>
+        <AccordionItemButton>
+          1
+          <AccordionItemPanel>
+            hello
+          </AccordionItemPanel>
+        </AccordionItemButton>
+        </AccordionItemHeading>
+      </AccordionItem>
+    </Accordion>
+    </>
   )
 
 }
