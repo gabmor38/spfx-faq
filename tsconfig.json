@@ -14,6 +14,7 @@
     "inlineSources": false,
     "noImplicitAny": true,
     "strictNullChecks": false,
+    "downlevelIteration": true,
 
     "typeRoots": [
       "./node_modules/@types",
@@ -26,7 +27,8 @@
       "es5",
       "dom",
       "es2015.collection",
-      "es2015.promise"
+      "es2015.promise",
+      "es6"
     ]
   },
   "include": [

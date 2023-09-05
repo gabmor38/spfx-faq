@@ -82,10 +82,17 @@ const Faq = (props: IFaqProps) => {
   
   
   console.log("items", faqItems)
+  
 
-  
-  const categories = faqItems.map((items) => (items.categoryEN));
-  
+  const categories: any[] = faqItems.map((item) => item.categoryEN);
+
+  const distinctCategories = [...new Set(categories)];
+
+
+
+
+
+
 
   console.log(categories)
 
@@ -97,9 +104,12 @@ const Faq = (props: IFaqProps) => {
     <Accordion>
       <AccordionItem >
         <AccordionItemHeading >
-          <AccordionItemButton >
-         2
-          </AccordionItemButton>
+           
+            <AccordionItemButton  >
+             
+             </AccordionItemButton>
+          
+   
         </AccordionItemHeading>
         <AccordionItemPanel>
     1
