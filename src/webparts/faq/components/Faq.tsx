@@ -16,11 +16,23 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
+import './accordion.css';
 
 
 export interface IFAQList {
- questionEN: string,
- questionFR: string,
+  Id?: number;
+  QuestionEN?: string;
+  QuestionFR?: string;
+  AnswerEN?: string;
+  AnswerFR?: string;
+  BusinessCategory?: string;
+  CategoryNameEN?: string;
+  CategoryNameFR?: string;
+  CategorySortOrder?: number;
+  QuestionSortOrder?: number;
+  IsFullRow?: string;
+  expandRow?: boolean;
+  Modified?: Date;
 
 }
 
@@ -39,8 +51,15 @@ const Faq = (props: IFaqProps) => {
 
     setFaqItems((items).map((item) => {
       return {
+        id: item.Id,
         questionEN: item.QuestionEN,
-        questionFR: item.QuestionFR
+        questionFR: item.QuestionFR,
+        answerEN: item.AnswerEN,
+        answerFR: item.AnswerFR,
+        categoryEN: item.CategoryNameEN,
+        categoryFR: item.CategoryNameFR,
+        title: item.Title
+
       }
 
     }))
@@ -53,7 +72,6 @@ const Faq = (props: IFaqProps) => {
     
   }
 
-  console.log(getListItems())
 
   useEffect(() => {
 
@@ -65,20 +83,30 @@ const Faq = (props: IFaqProps) => {
   
   console.log("items", faqItems)
 
+  
+  const categories = faqItems.map((items) => (items.categoryEN));
+  
+
+  console.log(categories)
+
   return (
+
+
     <>
-    <Accordion >
-      <AccordionItem>
-        <AccordionItemHeading>
-        <AccordionItemButton>
-          1
-          <AccordionItemPanel>
-            hello
-          </AccordionItemPanel>
-        </AccordionItemButton>
+
+    <Accordion>
+      <AccordionItem >
+        <AccordionItemHeading >
+          <AccordionItemButton >
+         2
+          </AccordionItemButton>
         </AccordionItemHeading>
+        <AccordionItemPanel>
+    1
+        </AccordionItemPanel>
       </AccordionItem>
-    </Accordion>
+  </Accordion>
+      
     </>
   )
 
