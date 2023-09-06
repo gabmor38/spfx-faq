@@ -17,6 +17,7 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import './accordion.css';
+import parse from 'html-react-parser';
 
 
 export interface IFAQList {
@@ -116,7 +117,7 @@ const Faq = (props: IFaqProps) => {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  {allQ.answerEN}
+                  {parse(allQ.answerEN)}
                 </AccordionItemPanel>
               </AccordionItem>
                 ))}
