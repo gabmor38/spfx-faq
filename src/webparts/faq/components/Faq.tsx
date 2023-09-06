@@ -90,32 +90,42 @@ const Faq = (props: IFaqProps) => {
 
 
 
-
-
-
-
-  console.log(categories)
-
   return (
 
 
     <>
 
-    <Accordion>
-      <AccordionItem >
+    <Accordion allowMultipleExpanded={ true } allowZeroExpanded={ true }>
+      {distinctCategories.map((item, index) => (
+        <AccordionItem key={index}>
         <AccordionItemHeading >
-           
             <AccordionItemButton  >
-             
+             {item}
              </AccordionItemButton>
-          
-   
         </AccordionItemHeading>
-        <AccordionItemPanel>
-    1
-        </AccordionItemPanel>
+     
+          <AccordionItemPanel >
+            <Accordion allowMultipleExpanded={ true } allowZeroExpanded={ true }>
+
+              {faqItems.filter(obj => obj.categoryEN === item).map((allQ, i) => (
+
+              <AccordionItem key={i}> 
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    {allQ.questionEN}
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  {allQ.answerEN}
+                </AccordionItemPanel>
+              </AccordionItem>
+                ))}
+            </Accordion>
+          </AccordionItemPanel>
+          
       </AccordionItem>
-  </Accordion>
+      ))}
+    </Accordion>
       
     </>
   )
